@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}{{ links.subtitle }} | {{ links.organization }}{% endblock %}
+{% block content %}
+<article class="document">
+  <div class="document-header">
+    <img class="seal" src="assets/images/uh-seal.png" alt="University of Houston seal">
+    <div><h1>{{ links.title }}</h1><p class="subtitle">{{ links.subtitle }}</p></div>
+  </div>
+  <ul class="link-list">
+    {% for item in links['items'] %}
+    <li><h2>{{ item.title }}</h2><a href="{{ item.url }}">{{ item.url }}</a></li>
+    {% endfor %}
+  </ul>
+  <p>Questions? Email: <a href="mailto:{{ links.contact_email }}">{{ links.contact_email }}</a></p>
+</article>
+{% endblock %}

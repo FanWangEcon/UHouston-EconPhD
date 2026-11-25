@@ -1,0 +1,44 @@
+title: University of Houston PhD Program in Economics
+deadline: "Application deadline: January 15th, 2027"
+pdf_label: Current flyer (PDF)
+apply_label: For more information and to apply, visit
+apply_url: https://uh.edu/class/economics/graduate/
+contact_label: Any questions? Email
+contact_email: econgrad@central.uh.edu
+images:
+  header:
+    src: assets/images/flyer-header.png
+    alt: Houston skyline at sunset
+  footer:
+    src: assets/images/flyer-footer.png
+    alt: University of Houston campus
+sections:
+  - title: Exceptional faculty
+    items:
+      - Former President of Society of Labor Economists; 3 National Bureau of Economic Research (NBER) Research Associates.
+      - Top-10 ranking in publications for departments under 25 faculty (RePEc).
+      - "Publications in the past five years include, among others, American Economic Review, Econometrica (2), Journal of Political Economy (2), Review of Economic Studies (2), AEJ: Applied Economics, AEJ: Economic Policy (2), AEJ: Macro (4), Economic Journal (4), International Economic Review, Journal of the European Economic Association, Quantitative Economics (2)."
+      - "Fields of study: development economics, health economics, industrial organization, international economics, labor economics, macroeconomics, political economy, public finance, urban economics, and others."
+      - A new donation enables us to add multiple new endowed professorships and graduate fellowships over the next few years.
+    more:
+      prefix: For detailed information on our faculty, please see our
+      label: faculty page
+      url: https://www.uh.edu/class/economics/people/current-faculty/
+  - title: Student support
+    items:
+      - "We offer competitive financial support: most PhD students receive a full tuition waiver and a nationally competitive stipend."
+      - Our students benefit from small class sizes and close interaction with faculty starting from the first year, and they frequently coauthor papers with faculty members.
+      - "Designated as a Federal STEM program: International students can work up to 3 years with their Optional Practical Training (OPT) after graduation."
+  - title: Our city
+    items:
+      - Houston is a true international city - among the most diverse and fastest growing in the US. One of the great centers of innovation in the world, it is a leader in space exploration (NASA), petrochemicals, and medical science (the world's largest medical center).
+  - title: Successful alumni
+    introduction: "Our alumni embark on careers in academia, government, and the private sector. In the past 5 years:"
+    items:
+      - Graduates have secured research and teaching positions at U.S. academic institutions including Brandeis International Business School, South Dakota State University, Southern Methodist University, Tulane University, the University of Arkansas, the University of Chicago, the University of Michigan, the University of Nebraska-Omaha, and the University of Pennsylvania.
+      - Graduates have joined as faculty and postdoctoral fellows at international institutions such as Academia Sinica (Taiwan), BI Business School (Norway), National Taiwan University, Singapore Management University, Technologico de Monterrey (Mexico), and Tsinghua University (China).
+      - Others have taken positions at Amazon, Bank of America, Bank of Mexico, Citibank, the Federal Reserve Bank of Minneapolis, the Inter-American Development Bank, the Securities and Exchange Commission, Vanguard, and the World Bank.
+    more:
+      prefix: For detailed placement information, please see our
+      label: placement page
+      url: https://www.uh.edu/class/economics/graduate/phd-placements/index.php

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Flyer | {{ flyer.title }}{% endblock %}
+{% block content %}
+<article class="document flyer">
+  <img class="banner" src="{{ flyer.images.header.src }}" alt="{{ flyer.images.header.alt }}">
+  <div class="flyer-content">
+    <h1>{{ flyer.title }}</h1>
+    <p class="deadline">{{ flyer.deadline }}</p>
+    {% for section in flyer.sections %}
+    <section id="section-{{ loop.index }}">
+      <h2>{{ section.title }}</h2>
+      {% if section.introduction is defined %}<p>{{ section.introduction }}</p>{% endif %}
+      <ul>{% for item in section['items'] %}<li>{{ item }}</li>{% endfor %}</ul>
+      {% if section.more is defined %}
+      <p class="more">{{ section.more.prefix }} <a href="{{ section.more.url }}">{{ section.more.label }}</a>.</p>
+      {% endif %}
+    </section>
+    {% endfor %}
+    <div class="flyer-contact">
+      <p>{{ flyer.apply_label }} <a href="{{ flyer.apply_url }}">{{ flyer.apply_url }}</a></p>
+      <p>{{ flyer.contact_label }} <a href="mailto:{{ flyer.contact_email }}">{{ flyer.contact_email }}</a></p>
+    </div>
+  </div>
+  <img class="banner" src="{{ flyer.images.footer.src }}" alt="{{ flyer.images.footer.alt }}">
+</article>
+{% endblock %}

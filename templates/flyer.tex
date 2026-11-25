@@ -1,0 +1,46 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper,left=1in,right=1in,top=1.08in,bottom=1.08in]{geometry}
+\usepackage[sfdefault,lf]{carlito}
+\usepackage{xcolor,graphicx,enumitem,eso-pic}
+\usepackage{hyperref}
+\definecolor{UHRed}{HTML}{C8102E}
+\definecolor{LinkBlue}{HTML}{0066CC}
+\hypersetup{colorlinks=true,urlcolor=LinkBlue,pdftitle={(( flyer.title|tex ))},pdfauthor={(( links.organization|tex ))}}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=36pt,label=\textbullet,itemsep=2pt,topsep=0pt,partopsep=0pt,parsep=0pt}
+\hyphenpenalty=10000
+\AddToShipoutPictureBG{
+  \AtPageUpperLeft{\raisebox{-1in}{\includegraphics[width=\paperwidth,height=1in]{(( flyer.images.header.src ))}}}
+  \AtPageLowerLeft{\includegraphics[width=\paperwidth,height=1in]{(( flyer.images.footer.src ))}}
+}
+\begin{document}
+\raggedright
+\begin{center}
+{\fontsize{16}{18}\selectfont\bfseries\color{UHRed}(( flyer.title|tex ))}\\[3pt]
+{\bfseries (( flyer.deadline|tex ))}
+\end{center}
+\vspace{-7pt}
+((* for section in flyer.sections *))
+{\bfseries\color{UHRed}(( section.title|tex ))}\par
+((* if section.introduction is defined *))
+\vspace{3pt}\hspace*{18pt}\begin{minipage}{\dimexpr\linewidth-18pt}
+(( section.introduction|tex ))
+\end{minipage}
+((* endif *))
+\begin{itemize}
+((* for item in section['items'] *))
+\item (( item|tex ))
+((* endfor *))
+\end{itemize}
+((* if section.more is defined *))
+\hspace*{18pt}{\itshape (( section.more.prefix|tex )) \href{(( section.more.url|tex ))}{(( section.more.label|tex ))}.}\par
+((* endif *))
+\vspace{5pt}
+((* endfor *))
+\begin{center}
+(( flyer.apply_label|tex )) \href{(( flyer.apply_url|tex ))}{(( flyer.apply_url|tex ))}\\[2pt]
+(( flyer.contact_label|tex )) \href{mailto:(( flyer.contact_email|tex ))}{(( flyer.contact_email|tex ))}
+\end{center}
+\end{document}

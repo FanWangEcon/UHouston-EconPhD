@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <img class="banner" src="{{ flyer.images.header.src }}" alt="{{ flyer.images.header.alt }}">
+  <div class="hero-content">
+    <p class="eyebrow">{{ links.department }}</p>
+    <h1>{{ flyer.title }}</h1>
+    <p class="deadline">{{ flyer.deadline }}</p>
+    <div class="actions">
+      <a class="button" href="{{ flyer.apply_url }}">Program information and application</a>
+      <a class="button secondary" href="flyer.html">View flyer</a>
+    </div>
+  </div>
+</section>
+<div class="cards">
+  <section class="card">
+    <h2><a href="links.html">Links</a></h2>
+    <p>{{ links.subtitle }}</p>
+    <ul>
+      {% for item in links['items'] %}
+      <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </section>
+  <section class="card">
+    <h2><a href="flyer.html">Flyer</a></h2>
+    <ul class="section-list">
+      {% for section in flyer.sections %}
+      <li><a href="flyer.html#section-{{ loop.index }}">{{ section.title }}</a></li>
+      {% endfor %}
+    </ul>
+    <p>{{ flyer.contact_label }} <a href="mailto:{{ flyer.contact_email }}">{{ flyer.contact_email }}</a></p>
+  </section>
+</div>
+{% endblock %}

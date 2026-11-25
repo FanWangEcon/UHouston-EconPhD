@@ -1,0 +1,9 @@
+name: uh-econ-pages
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - tectonic=0.17.0
+  - pip:
+      - -r requirements-test.txt

@@ -1,0 +1,36 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper,margin=0.85in]{geometry}
+\usepackage{fontspec}
+\setmainfont{lmroman10-regular.otf}[BoldFont=lmroman10-bold.otf,ItalicFont=lmroman10-italic.otf]
+\usepackage{xcolor,graphicx,enumitem,tabularx}
+\usepackage{hyperref}
+\usepackage{xurl}
+\definecolor{UHRed}{HTML}{C8102E}
+\definecolor{UHGray}{HTML}{4D4D4D}
+\hypersetup{colorlinks=true,urlcolor=UHRed,pdftitle={(( links.subtitle|tex ))},pdfauthor={(( links.organization|tex ))}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\begin{document}
+\begin{minipage}[c]{0.18\textwidth}
+\includegraphics[width=\linewidth]{assets/images/uh-seal.png}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.80\textwidth}
+{\LARGE\bfseries (( links.title|tex ))}\\[5pt]
+{\large\bfseries (( links.subtitle|tex ))}
+\end{minipage}
+\vspace{8pt}
+{\color{UHRed}\rule{\textwidth}{1.2pt}}
+\vspace{6pt}
+\begin{itemize}[leftmargin=*,itemsep=1em]
+((* for item in links['items'] *))
+\item \textbf{(( item.title|tex ))}\\
+\url{(( item.url|tex ))}
+((* endfor *))
+\end{itemize}
+\bigskip
+\begin{tabularx}{\textwidth}{@{}X r@{}}
+\small\color{UHGray}Questions? Email: \href{mailto:(( links.contact_email|tex ))}{(( links.contact_email|tex ))}
+&
+\small\color{UHGray}(( links.organization|tex )) --- (( links.department|tex ))
+\end{tabularx}
+\end{document}
