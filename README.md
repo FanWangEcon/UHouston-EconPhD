@@ -69,3 +69,10 @@ change other repositories. Commit identity does not grant push permissions:
 the helper must authenticate an account with access to the remote repository.
 If its cached authentication expires, authenticate again using your existing
 WSL GitHub credential setup; do not put tokens in files, URLs, or Git configuration.
+
+WSL GitHub CLI is authorized as `FanWangEcon` with `repo` and `workflow`
+permissions and configured as the GitHub credential helper. To renew that
+authorization in an interactive WSL terminal, use
+`gh auth refresh --hostname github.com --scopes workflow`, then
+`gh auth setup-git --hostname github.com`. This changes GitHub authentication
+for WSL generally; repository-local commit identities remain unchanged.
