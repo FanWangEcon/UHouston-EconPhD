@@ -12,6 +12,15 @@
     </div>
   </div>
 </section>
+<section class="card webinar" aria-labelledby="webinar-title">
+  <h2 id="webinar-title">{{ flyer.webinar.title }}</h2>
+  <ul>
+    {% for time in flyer.webinar.times %}
+    <li>{{ flyer.webinar.date }} at {{ time }} &mdash; {{ flyer.webinar.timezone }}</li>
+    {% endfor %}
+  </ul>
+  <a class="button" href="{{ flyer.webinar.signup_url }}">{{ flyer.webinar.signup_label }}</a>
+</section>
 <div class="cards">
   <section class="card">
     <h2><a href="links.html">Links</a></h2>

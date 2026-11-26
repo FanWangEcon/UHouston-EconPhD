@@ -76,6 +76,16 @@ def load_data(root=ROOT):
     for field in ("deadline", "apply_label", "contact_label"):
         text(flyer.get(field), f"flyer.{field}")
     web_url(flyer.get("apply_url"), "flyer.apply_url")
+    webinar = flyer.get("webinar")
+    if not isinstance(webinar, dict):
+        raise ValueError("flyer.webinar must be a mapping")
+    for field in ("title", "date", "timezone", "signup_label"):
+        text(webinar.get(field), f"flyer.webinar.{field}")
+    web_url(webinar.get("signup_url"), "flyer.webinar.signup_url")
+    if not isinstance(webinar.get("times"), list) or not webinar["times"]:
+        raise ValueError("flyer.webinar.times must be a non-empty list")
+    for time in webinar["times"]:
+        text(time, "flyer.webinar.times")
     if not isinstance(flyer.get("sections"), list) or not flyer["sections"]:
         raise ValueError("flyer.sections must be a non-empty list")
     for index, section in enumerate(flyer["sections"]):

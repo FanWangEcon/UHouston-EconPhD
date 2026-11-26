@@ -35,6 +35,7 @@ main.container { padding-block: 2rem; }
 .button.secondary { color: var(--red); background: white; }
 .cards { display: grid; grid-template-columns: 1.25fr 1fr; gap: 1.5rem; margin-top: 1.5rem; }
 .card { padding: 1.5rem; }
+.webinar { margin-top: 1.5rem; border-left: 4px solid var(--red); }
 .card li { margin-bottom: .5rem; }
 .document { padding: clamp(1rem, 3vw, 2.5rem); }
 .document-header { display: flex; align-items: center; gap: 1.5rem; padding-bottom: 1rem; border-bottom: 3px solid var(--red); }

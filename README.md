@@ -6,10 +6,11 @@ The homepage, Links tab, Flyer tab, and two downloadable PDFs are built from
 the same YAML revision. Edit program information only in:
 
 - [`data/links.yml`](data/links.yml): applicant links, labels, and contact details.
-- [`data/flyer.yml`](data/flyer.yml): flyer sections, deadline, links, and image references.
+- [`data/flyer.yml`](data/flyer.yml): flyer sections, deadline, links, image references,
+  and homepage webinar sessions and registration.
 
-The initial content faithfully follows the supplied 2026 applicant-links document
-and 2027 flyer. Dates and factual claims are not automatically updated.
+The applicant links and flyer target the 2027 application cycle. Source document
+dates in external URLs are preserved. Dates and factual claims are not automatically updated.
 The supplied flyer imagery is included with the content owner's authorization.
 
 ## Local build in WSL2

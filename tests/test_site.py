@@ -37,6 +37,21 @@ def normalized(value):
 
 
 class BuildBehaviorTests(unittest.TestCase):
+    def test_yaml_webinar_edits_reach_homepage(self):
+        data = load_data()
+        webinar = data["flyer"]["webinar"]
+        webinar["date"] = "December 5, 2026"
+        webinar["times"] = ["8:00 AM", "4:00 PM"]
+        webinar["signup_url"] = "https://example.com/updated-registration"
+        with tempfile.TemporaryDirectory() as directory:
+            render_html(data, Path(directory))
+            home = Page((Path(directory) / "index.html").read_text(encoding="utf-8"))
+            rendered = " ".join(home.text)
+            for time in webinar["times"]:
+                self.assertIn(f"{webinar['date']} at {time}", rendered)
+            self.assertIn(webinar["timezone"], rendered)
+            self.assertIn(webinar["signup_url"], home.targets)
+
     def test_yaml_edit_reaches_html_and_latex_escaping(self):
         data = load_data()
         sample = 'A & B <test> 50% $funding #1_{x}\\path'
@@ -76,6 +91,16 @@ class GeneratedSiteTests(unittest.TestCase):
             name: Page((cls.site / f"{name}.html").read_text(encoding="utf-8"))
             for name in ("index", "links", "flyer")
         }
+
+    def test_homepage_contains_webinar_sessions_and_registration(self):
+        webinar = self.data["flyer"]["webinar"]
+        home = self.pages["index"]
+        rendered = " ".join(home.text)
+        for time in webinar["times"]:
+            self.assertIn(f"{webinar['date']} at {time}", rendered)
+        for field in ("title", "timezone", "signup_label"):
+            self.assertIn(webinar[field], rendered)
+        self.assertIn(webinar["signup_url"], home.targets)
 
     def test_navigation_assets_and_both_pdf_links_on_every_page(self):
         for name, page in self.pages.items():

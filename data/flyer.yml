@@ -5,6 +5,15 @@ apply_label: For more information and to apply, visit
 apply_url: https://uh.edu/class/economics/graduate/
 contact_label: Any questions? Email
 contact_email: econgrad@central.uh.edu
+webinar:
+  title: Economics PhD admissions webinar
+  date: December 4, 2026
+  times:
+    - "7:00 AM"
+    - "3:00 PM"
+  timezone: Houston time (CST, UTC-6)
+  signup_label: Sign up for a webinar
+  signup_url: https://universityofhouston.iad1.qualtrics.com/jfe/form/SV_eScdRofPARRlj3o
 images:
   header:
     src: assets/images/flyer-header.png
